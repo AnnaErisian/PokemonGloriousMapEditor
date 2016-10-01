@@ -1,7 +1,9 @@
 var paletteModule = {
+  module: null;
   activeTileset: 0,
-  tilesets: [],
-  icons: [],
+  tilesets: [], //stored for creation of tilesetsModules
+  icons: [], //stored for creation of tilesetsModules
+  tilesetModules: [], //holds the tilesetModules
   setActiveTileset: function(event) {
     
   },
@@ -13,9 +15,18 @@ var paletteModule = {
     icons = newIconsArray;
   },
   render: function() {
-    //refresh tabs and render tileset modules
+    //add new tilesets
+    var numTilesets = tilesets.length;
+    for(i = 0; i < numTilesets; i++) {
+      //if the module doesn't exist, create it
+    }
+    
+    //refresh tabs module
+    
   },
   createModule: function() {
-    //create tabs and create tileset modules
-  }
+    //create tabs
+    //create tileset modules
+    
+  },
 };

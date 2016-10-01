@@ -8,14 +8,14 @@ var paletteModule = {
   getCurrentSelection: function() { //return: {i,x,y,l,h}
     return activeTileset.getCurrentSelection();
   },
-  setTilesets(): function(newTilesetsArray, newIconsArray) { //param: [], []
+  setTilesets: function(newTilesetsArray, newIconsArray) { //param: [], []
     tilesets = newTilesetsArray;
     icons = newIconsArray;
   },
-  render(): function() {
+  render: function() {
     //refresh tabs and render tileset modules
   },
-  createModule(): function() {
+  createModule: function() {
     //create tabs and create tileset modules
   }
 };

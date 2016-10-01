@@ -4,7 +4,7 @@ var paletteModule = {
   icons: [],
   setActiveTileset: function(event) {
     
-  }
+  },
   getCurrentSelection: function() { //return: {i,x,y,l,h}
     return activeTileset.getCurrentSelection();
   },

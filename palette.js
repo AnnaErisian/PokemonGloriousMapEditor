@@ -1,31 +1,19 @@
 var paletteModule = {
-  startCoordinates: [-1,-1],
-  startCoordinates: function() {
-  
+  activeTileset: 0,
+  tilesets: [],
+  icons: [],
+  void setActiveTileset()
+  getCurrentSelection(): function() { //return: {i,x,y,l,h}
+    return activeTileset.getCurrentSelection();
   },
-  currentSelection: function() { //returns {i,x,y,l,h}
-  
+  setTilesets(): function(newTilesetsArray, newIconsArray) { //param: [], []
+    tilesets = newTilesetsArray;
+    icons = newIconsArray;
   },
-  startSetSelection: function() {
-  
+  render(): function() {
+    //refresh tabs and render tileset modules
   },
-  finishSetSelection: function() {
-  
-  },
-  terminateSetSelection: function() {
-  
-  },
-  getCurrentSelection: function() {
-  
-  },
-  setTilesets: function() {
-  
-  },
-  render: function() {
-  
-  },
-  createModule: function() {
-  
+  createModule(): function() {
+    //create tabs and create tileset modules
   }
-}
 };

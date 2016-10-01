@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            width: 100%;
+            background-color:rgba(128,0,0,0.5);
+            margin:0;
+        }
+        
+        #wholePage {
+            height: 100%;
+            width: 100%;
+        }
+        
+        #paletteModule {
+            width: 280px;
+            
+            position:absolute;
+            top: 0px;
+            bottom: 0px;
+            right: 0px;
+            
+            background-color: rgba(0,128,0,0.5);
+        }
+        
+        #canvasModule {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: calc(100% - 280px);
+            overflow: auto;
+            background-color:rgba(0,0,128,0.5);
+        }
+        
+        #topBar {
+            width: calc(100% - 6px); 
+            padding: 3px;
+            background-color:rgba(0,128,128,0.5);
+        }
+        
+        #managementModule {
+            background-color:rgba(128,128,0,0.5);
+        }
+        
+        #layerModule {
+            float: right;
+            background-color:rgba(128,0,128,0.5);
+        }
+    </style>
+    <title>Test skeleton page</title>
+    <script type="text/javascript" src="palette.js"></script>
+    <script src="loader.js"></script> <!-- loads the sheets -->
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script> <!-- client API library -->
+</head>
+<body>
+    <div id="wholePage">
+        <div id="paletteModule"></div>
+        <div id="canvasModule">
+            <div id="authorize-div" style="display: none">
+              <span>Authorize access to Google Sheets API</span>
+              <!--Button for the user to click to initiate auth sequence -->
+              <button id="authorize-button" onclick="handleAuthClick(event)">
+                Authorize
+              </button>
+            </div>
+            <div id="topBar">
+                <span id="managementModule">fgdfgs</span>
+                <span id="layerModule">fgdfgs</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -2,8 +2,10 @@ var paletteModule = {
   activeTileset: 0,
   tilesets: [],
   icons: [],
-  void setActiveTileset()
-  getCurrentSelection(): function() { //return: {i,x,y,l,h}
+  setActiveTileset: function(event) {
+    
+  }
+  getCurrentSelection: function() { //return: {i,x,y,l,h}
     return activeTileset.getCurrentSelection();
   },
   setTilesets(): function(newTilesetsArray, newIconsArray) { //param: [], []

@@ -18,18 +18,23 @@ var paletteModule = {
     //add new tilesets
     var numTilesets = tilesets.length;
     for(i = 0; i < numTilesets; i++) {
-      //if the module doesn't exist, create it
-      if(tilesetModules[i] == undefined) {
+      //if the module doesn't exist in the html, create it
+      if(tilesetModules[i].module == null) {
         
       }
     }
     
     //refresh tabs module
-    
+    module.tabs( "refresh" );
   },
-  createModule: function() {
-    //create tabs
-    //create tileset modules
+  createModule: function() { //called once and only once
+    //find area
+    module = $( '#paletteModule' );
     
+    //create tileset modules
+    var numTilesets = tilesets.length;
+    for(i = 0; i < numTilesets; i++) {
+      tilesetModules[i] = createTileset(i, tileset[i]);
+    }
   },
 };

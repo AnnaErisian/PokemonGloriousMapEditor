@@ -31,10 +31,11 @@ function createTileset(id, image) {
       tileset = data;
     },
     render: function() {
-      
+      //create html
+      //call parent's render
     },
     createModule: function() {
-      
+      //set data
     }
   };
 }

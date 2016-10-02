@@ -1,9 +1,12 @@
-function createTilesetModule(idNum, image) {
+function createTilesetModule(idNum, image, iconimage) {
   return {
+    tabTemplate: $("#tabTemplate").innerHTML,
+    tilesetTemplate: $("#tilesheetTemplate").innerHTML,
     module: null,
     canvas: null,
     id: idNum,
     tileset: image,
+    icon: iconimage,
     currentSelection: null,
     startCoordinates: [-1,-1],
     
@@ -47,8 +50,10 @@ function createTilesetModule(idNum, image) {
       startCoordinates = [-1, -1];
     },
     
-    render: function() {
+    render: function(parent) {
       //create html
+      parent.tabUL += Mustache.render(tabTemplate, {icon: icon});
+      parent.module += Mustache.render(tilesheetTemplate, {image: tileset});
     }
   };
 }

@@ -1,5 +1,6 @@
 var paletteModule = {
   module: null,
+  tabUL: null,
   activeTileset: 0,
   tilesets: [], //stored for creation of tilesetsModules
   icons: [], //stored for creation of tilesetsModules
@@ -20,7 +21,7 @@ var paletteModule = {
     for(i = 0; i < numTilesets; i++) {
       //if the module doesn't exist in the html, create it
       if(tilesetModules[i].module == null) {
-        
+        tilesetModules[i].render(this);
       }
     }
     
@@ -30,12 +31,12 @@ var paletteModule = {
   createModule: function() { //called once and only once
     //find area
     module = $( '#paletteModule' );
+    tabUL = null; //TODO this
     
     //create tileset modules
     var numTilesets = tilesets.length;
     for(i = 0; i < numTilesets; i++) {
-      tilesetModules[i] = createTileset();
-      tilesetModules[i].createTilesetModule(i, tileset[i]);
+      tilesetModules[i] = createTilesetModule(i, tileset[i], icons[i]);
     }
   },
 };

@@ -1,28 +1,40 @@
-var tilesetModule = {
-  id: 0,
-  tileset: null,
-  icon: null,
-  currentSelection: null,
-  startCoordinates: [-1,-1],
-  getCurrentSelection: function() { //returns {i,x,y,l,h}
+function createTileset(id, image) {
+  return {
+    module: null;
+    id: 0,
+    tileset: null,
+    currentSelection: null,
+    startCoordinates: [-1,-1],
     
-  },
-  startSetSelection: function(event) {
+    getCurrentSelection: function() { //returns {i,x,y,l,h}
+      return {
+        i: id,
+        x: currentSelection.x,
+        y: currentSelection.y,
+        l: currentSelection.l,
+        h: currentSelection.h
+      };
+    },
     
-  },
-  finishSetSelection: function(event) {
+    startSetSelection: function(event) {
+      //set startCoords to current coords (32px squares, we want 1-8th square number)
+    },
     
-  },
-  terminateSetSelection: function(event) {
-  
-  },
-  setTileset: function(data) {
-  
-  },
-  render: function() {
-  
-  },
-  createModule: function() {
-  
-  }
-};
+    finishSetSelection: function(event) {
+      //if start is -1 -1, null current and print error
+      //otherwise, calculate current selection and reset start coords
+    },
+    terminateSetSelection: function(event) {
+      startCoordinates = [-1, -1];
+    },
+    setTileset: function(data) {
+      tileset = data;
+    },
+    render: function() {
+      
+    },
+    createModule: function() {
+      
+    }
+  };
+}

@@ -19,6 +19,9 @@ var paletteModule = {
     var numTilesets = tilesets.length;
     for(i = 0; i < numTilesets; i++) {
       //if the module doesn't exist, create it
+      if(tilesetModules[i] == undefined) {
+        
+      }
     }
     
     //refresh tabs module

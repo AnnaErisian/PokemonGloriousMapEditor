@@ -1,5 +1,5 @@
 var paletteModule = {
-  module: null;
+  module: null,
   activeTileset: 0,
   tilesets: [], //stored for creation of tilesetsModules
   icons: [], //stored for creation of tilesetsModules

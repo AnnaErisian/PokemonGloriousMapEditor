@@ -20,29 +20,29 @@ var paletteModule = {
     console.log("Palette Render");
   
     //add new tilesets
-    var numTilesets = tilesets.length;
+    var numTilesets = paletteModule.tilesets.length;
     for(i = 0; i < numTilesets; i++) {
       //if the module doesn't exist in the html, create it
-      if(tilesetModules[i].module == null) {
-        tilesetModules[i].render(this);
+      if(paletteModule.tilesetModules[i].module == null) {
+        paletteModule.tilesetModules[i].render(this);
       }
     }
     
     //refresh tabs module
-    module.tabs( "refresh" );
+    paletteModule.module.tabs( "refresh" );
   },
   createModule: function() { //called once and only once
     console.log("Palette Create");
     console.log(this);
     
     //find area
-    module = $( '#paletteModule' );
-    tabUL = module.find('ul');
+    paletteModule.module = $( '#paletteModule' );
+    paletteModule.tabUL = paletteModule.module.find('ul');
     
     //create tileset modules
-    var numTilesets = tilesets.length;
+    var numTilesets = paletteModule.tilesets.length;
     for(i = 0; i < numTilesets; i++) {
-      tilesetModules[i] = createTilesetModule(i, tileset[i], icons[i]);
+      paletteModule.tilesetModules[i] = createTilesetModule(i, paletteModule.tileset[i], paletteModule.icons[i]);
     }
   }
 };

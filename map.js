@@ -31,9 +31,11 @@ var mapModule = {
   },
   
   createModule(data) {
+    console.log("Map Creation");
     mapData = createData(data);
   },
   render: function(parent) {
+    console.log("Map Render");
     //create html
     module = $("#canvasModule");
   }

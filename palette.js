@@ -16,6 +16,8 @@ var paletteModule = {
     icons = newIconsArray;
   },
   render: function() {
+    console.log("Palette Render");
+  
     //add new tilesets
     var numTilesets = tilesets.length;
     for(i = 0; i < numTilesets; i++) {
@@ -29,6 +31,8 @@ var paletteModule = {
     module.tabs( "refresh" );
   },
   createModule: function() { //called once and only once
+    console.log("Palette Create");
+    
     //find area
     module = $( '#paletteModule' );
     tabUL = module.find('ul');

@@ -51,6 +51,8 @@ function createTilesetModule(idNum, image, iconimage) {
     },
     
     render: function(parent) {
+      console.log("Tileset Render");
+      
       //create html
       parent.tabUL.innerHTML += Mustache.render(tabTemplate, {icon: icon, n: id});
       parent.module.innerHTML += Mustache.render(tilesheetTemplate, {n: id});

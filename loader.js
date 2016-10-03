@@ -154,3 +154,5 @@ function pushbackFullSheet(data) {
     console.log('Error: ' + response.result.error.message);
   });
 }
+
+$(document).ready(checkAuth);

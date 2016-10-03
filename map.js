@@ -32,7 +32,7 @@ var mapModule = {
   
   createModule(data) {
     console.log("Map Creation");
-    mapData = createData(data);
+//    mapData = createData(data); NOT YET IMPLEMENTED
   },
   render: function(parent) {
     console.log("Map Render");

@@ -51,6 +51,7 @@ function handleAuthClick(event) {
  * Load Sheets API client library.
  */
 function loadSheetsApi() {
+  console.log("call loadSheetsApi");
   var discoveryUrl =
       'https://sheets.googleapis.com/$discovery/rest?version=v4';
   gapi.client.load(discoveryUrl).then(prepareApplication);
@@ -61,6 +62,7 @@ function loadSheetsApi() {
  * Document is dependent on what is loaded 
  */
 function prepareApplication() {
+  console.log("call prepareApplication");
   
   gapi.client.sheets.spreadsheets.values.get({
     spreadsheetId: getParameterByName('ssid'),

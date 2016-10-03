@@ -12,35 +12,36 @@ var paletteModule = {
     return activeTileset.getCurrentSelection();
   },
   setTilesets: function(newTilesetsArray, newIconsArray) { //param: [], []
-    this.tilesets = newTilesetsArray;
-    this.icons = newIconsArray;
+    tilesets = newTilesetsArray;
+    icons = newIconsArray;
+    console.log(newTilesetsArray);
   },
   render: function() {
     console.log("Palette Render");
   
     //add new tilesets
-    var numTilesets = this.tilesets.length;
+    var numTilesets = tilesets.length;
     for(i = 0; i < numTilesets; i++) {
       //if the module doesn't exist in the html, create it
-      if(this.tilesetModules[i].module == null) {
-        this.tilesetModules[i].render(this);
+      if(tilesetModules[i].module == null) {
+        tilesetModules[i].render(this);
       }
     }
     
     //refresh tabs module
-    this.module.tabs( "refresh" );
+    module.tabs( "refresh" );
   },
   createModule: function() { //called once and only once
     console.log("Palette Create");
     
     //find area
-    this.module = $( '#paletteModule' );
-    this.tabUL = this.module.find('ul');
+    module = $( '#paletteModule' );
+    tabUL = module.find('ul');
     
     //create tileset modules
-    var numTilesets = this.tilesets.length;
+    var numTilesets = tilesets.length;
     for(i = 0; i < numTilesets; i++) {
-      this.tilesetModules[i] = createTilesetModule(i, this.tileset[i], this.icons[i]);
+      tilesetModules[i] = createTilesetModule(i, tileset[i], icons[i]);
     }
   }
 };

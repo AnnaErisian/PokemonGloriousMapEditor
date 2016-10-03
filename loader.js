@@ -155,7 +155,3 @@ function pushbackFullSheet(data) {
   }
 )};
 
-$(document).ready(function() {
-  checkAuth();
-});
-

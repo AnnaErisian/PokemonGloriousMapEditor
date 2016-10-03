@@ -52,8 +52,10 @@ function createTilesetModule(idNum, image, iconimage) {
     
     render: function(parent) {
       //create html
-      parent.tabUL += Mustache.render(tabTemplate, {icon: icon});
-      parent.module += Mustache.render(tilesheetTemplate, {image: tileset});
+      parent.tabUL.innerHTML += Mustache.render(tabTemplate, {icon: icon, n: id});
+      parent.module.innerHTML += Mustache.render(tilesheetTemplate, {n: id});
+      module = {tabHead: parent.module.find("#tabHead-"+id), tab: parent.module.find("tabs-"+id)};
+      canvas = module.tab.find("canvas");
     }
   };
 }

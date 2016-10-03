@@ -56,10 +56,21 @@
     <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script> <!-- client API library -->
     <script type="text/javascript" src="palette.js"></script>
     <script src="loader.js"></script> <!-- loads the sheets -->
+    
+  <template id="tabTemplate">
+    <li>    <li><a href="#tabs-{{n}}" id="tabHead-{{n}}"><img href="{{icon}}" /></a></li>
+  </template>
+  
+  <template id="tilesheetTemplate">
+    <div id="tabs-{{n}}">
+        <canvas />
+    </div>
+  </template>
+
 </head>
 <body>
     <div id="wholePage">
-        <div id="paletteModule"></div>
+        <div id="paletteModule"><ul></ul></div>
         <div id="canvasModule">
             <div id="authorize-div" style="display: none">
               <span>Authorize access to Google Sheets API</span>

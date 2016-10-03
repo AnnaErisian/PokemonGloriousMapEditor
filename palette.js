@@ -31,7 +31,7 @@ var paletteModule = {
   createModule: function() { //called once and only once
     //find area
     module = $( '#paletteModule' );
-    tabUL = null; //TODO this
+    tabUL = module.find('ul');
     
     //create tileset modules
     var numTilesets = tilesets.length;

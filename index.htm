@@ -54,14 +54,14 @@
     <script type = text/javascript" src = "lib/jquery-ui-1.12.1/jquery-ui.js"> </script>
     <script type = text/javascript" src = "lib/mustache.js"> </script>
     
+    <!-- loads the sheets -->
+    <script src="loader.js"></script>
+    
     <!-- client API library -->
     <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
     <script type="text/javascript" src="palette.js"></script>
     <script type="text/javascript" src="tileset.js"></script>
     <script type="text/javascript" src="map.js"></script>
-    
-    <!-- loads the sheets -->
-    <script src="loader.js"></script>
     
   <template id="tabTemplate">
     <li>    <li><a href="#tabs-{{n}}" id="tabHead-{{n}}"><img href="{{icon}}" /></a></li>

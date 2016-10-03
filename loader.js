@@ -152,10 +152,10 @@ function pushbackFullSheet(data) {
     values: data
   }).then(function(response) {}, function(response) {
     console.log('Error: ' + response.result.error.message);
-  });
-}
+  }
+)};
 
 $(document).ready(function() {
-  alert("why");
   checkAuth();
 });
+

@@ -40,7 +40,7 @@ var paletteModule = {
     //create tileset modules
     var numTilesets = tilesets.length;
     for(i = 0; i < numTilesets; i++) {
-      tilesetModules[i] = createTilesetModule(i, tileset[i], icons[i]);
+      tilesetModules = createTilesetModule(i, tileset[i], icons[i]);
     }
   }
 };

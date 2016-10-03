@@ -42,7 +42,7 @@ var paletteModule = {
     //create tileset modules
     var numTilesets = paletteModule.tilesets.length;
     for(i = 0; i < numTilesets; i++) {
-      paletteModule.tilesetModules[i] = createTilesetModule(i, paletteModule.tileset[i], paletteModule.icons[i]);
+      paletteModule.tilesetModules[i] = createTilesetModule(i, paletteModule.tilesets[i], paletteModule.icons[i]);
     }
   }
 };

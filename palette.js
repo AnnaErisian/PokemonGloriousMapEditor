@@ -14,6 +14,7 @@ var paletteModule = {
   setTilesets: function(newTilesetsArray, newIconsArray) { //param: [], []
     tilesets = newTilesetsArray;
     icons = newIconsArray;
+    console.log(newTilesetsArray);
   },
   render: function() {
     console.log("Palette Render");
@@ -40,7 +41,7 @@ var paletteModule = {
     //create tileset modules
     var numTilesets = tilesets.length;
     for(i = 0; i < numTilesets; i++) {
-      tilesetModules = createTilesetModule(i, tileset[i], icons[i]);
+      tilesetModules[i] = createTilesetModule(i, tileset[i], icons[i]);
     }
   }
 };

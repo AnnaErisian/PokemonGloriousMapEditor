@@ -32,7 +32,7 @@ var mapModule = {
   
   createModule(data) {
     mapData = createData(data);
-  }
+  },
   render: function(parent) {
     //create html
     module = $("#canvasModule");

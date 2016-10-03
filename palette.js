@@ -38,5 +38,5 @@ var paletteModule = {
     for(i = 0; i < numTilesets; i++) {
       tilesetModules[i] = createTilesetModule(i, tileset[i], icons[i]);
     }
-  },
+  }
 };

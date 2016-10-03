@@ -86,7 +86,14 @@ function prepareApplication() {
     paletteModule.setTilesets(tilesheetURIs, iconURIs);
     
     //send map data to MapModule
-//    mapModule.createModule(data);
+    mapModule.createModule(data);
+    paletteModule.createModule(data);
+    
+    //render page
+    mapModule.render();
+    paletteModule.render();
+//    layerModule.render();
+//    managementModule.render();
     
   }, function(response) {
     console.log('Error: ' + response.result.error.message);

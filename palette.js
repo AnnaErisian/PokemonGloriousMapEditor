@@ -12,8 +12,8 @@ var paletteModule = {
     return activeTileset.getCurrentSelection();
   },
   setTilesets: function(newTilesetsArray, newIconsArray) { //param: [], []
-    tilesets = newTilesetsArray;
-    icons = newIconsArray;
+    paletteModule.tilesets = newTilesetsArray;
+    paletteModule.icons = newIconsArray;
     console.log(newTilesetsArray);
   },
   render: function() {

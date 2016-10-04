@@ -20,7 +20,7 @@ var paletteModule = {
     console.log("Palette Render");
   
     //add new tilesets
-    var numTilesets = this.paletteModule.tilesets.length;
+    var numTilesets = this.tilesets.length;
     for(i = 0; i < numTilesets; i++) {
       //if the module doesn't exist in the html, create it
       if(this.tilesetModules[i].module == null) {
@@ -37,10 +37,10 @@ var paletteModule = {
     
     //find area
     this.module = $( '#paletteModule' );
-    this.tabUL = paletteModule.module.find('ul');
+    this.tabUL = this.module.find('ul');
     
     //create tileset modules
-    var numTilesets = paletteModule.tilesets.length;
+    var numTilesets = this.tilesets.length;
     for(i = 0; i < numTilesets; i++) {
       this.tilesetModules[i] = createTilesetModule(i, this.tilesets[i], this.icons[i]);
     }

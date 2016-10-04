@@ -6,13 +6,13 @@ var mapModule = {
   startSetSelection: function(event) {
     //set startCoords to current coords (32px squares, we want 1-8th square number)
     var coords = getCursorPosition(canvas, event);
-    startCoordinates[0] = coords.x/32;
-    startCoordinates[1] = coords.y/32;
+    this.startCoordinates[0] = coords.x/32;
+    this.startCoordinates[1] = coords.y/32;
   },
   
   finishSetSelection: function(event) {
     //if start is -1 -1, leave current and print error
-    if(startCoordinates[0] == -1 && startCoordinates[1] == -1) {
+    if(this.startCoordinates[0] == -1 && this.startCoordinates[1] == -1) {
       console.log("finished Set Selection flow without starting coordinates");
       return;
     }
@@ -23,11 +23,11 @@ var mapModule = {
     
     //Set data
     
-    startCoordinates = [-1, -1];
+    this.startCoordinates = [-1, -1];
   },
   
   terminateSetSelection: function(event) {
-    startCoordinates = [-1, -1];
+    this.startCoordinates = [-1, -1];
   },
   
   createModule(data) {
@@ -37,6 +37,6 @@ var mapModule = {
   render: function(parent) {
     console.log("Map Render");
     //create html
-    module = $("#canvasModule");
+    this.module = $("#canvasModule");
   }
 };

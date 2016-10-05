@@ -47,7 +47,7 @@ var paletteModule = {
       this.tilesetModules[i] = createTilesetModule(i, this.tilesets[i], this.icons[i]);
     }
     
-    module.tabs();
+    this.module.tabs();
     
   }
 };

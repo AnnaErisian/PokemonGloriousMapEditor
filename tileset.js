@@ -1,7 +1,7 @@
 function createTilesetModule(idNum, image, iconimage) {
   return {
-    tabTemplate: $("#tabTemplate")[0].innerHTML,
-    tilesheetTemplate: $("#tilesheetTemplate")[0].innerHTML,
+    tabTemplate: $("#tabTemplate")[0].innerHTML.toString(),
+    tilesheetTemplate: $("#tilesheetTemplate")[0].innerHTML.toString(),
     module: null,
     canvas: null,
     id: idNum,

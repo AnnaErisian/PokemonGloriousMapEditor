@@ -28,6 +28,8 @@ var paletteModule = {
       }
     }
     
+    
+    
     //refresh tabs module
     this.module.tabs( "refresh" );
   },
@@ -44,5 +46,8 @@ var paletteModule = {
     for(i = 0; i < numTilesets; i++) {
       this.tilesetModules[i] = createTilesetModule(i, this.tilesets[i], this.icons[i]);
     }
+    
+    module.tabs();
+    
   }
 };

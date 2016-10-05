@@ -55,8 +55,8 @@ function createTilesetModule(idNum, image, iconimage) {
       
       //create html
       console.log(tabTemplate);
-      parent.tabUL.innerHTML += Mustache.render(tabTemplate+"", {iconImg: this.icon, n: this.id});
-      parent.module.innerHTML += Mustache.render(tilesheetTemplate+"", {n: this.id});
+      parent.tabUL.html( parent.tabUL.html()  + Mustache.render(tabTemplate+"", {iconImg: this.icon, n: this.id}));
+      parent.module.html(parent.module.html() + Mustache.render(tilesheetTemplate+"", {n: this.id}));
       var tabvar = parent.module.find("tabs-"+this.id);
       var tabHeadVar = parent.module.find("#tabHead-"+this.id);
       this.module = {tabHead: tabHeadVar, tab: tabvar};

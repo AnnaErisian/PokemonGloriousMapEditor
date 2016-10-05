@@ -60,7 +60,7 @@ function createTilesetModule(idNum, image, iconimage) {
       var tabvar = parent.module.find("tabs-"+this.id);
       var tabHeadVar = parent.module.find("#tabHead-"+this.id);
       this.module = {tabHead: tabHeadVar, tab: tabvar};
-      this.canvas = module.tab.find("canvas");
+      this.canvas = this.module.tab.find("canvas");
     }
   };
 }

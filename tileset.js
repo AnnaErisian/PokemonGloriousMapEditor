@@ -1,7 +1,7 @@
 function createTilesetModule(idNum, image, iconimage) {
   return {
-    tabTemplate: $("#tabTemplate").innerHTML,
-    tilesetTemplate: $("#tilesheetTemplate").innerHTML,
+    tabTemplate: $("#tabTemplate")[0].innerHTML,
+    tilesetTemplate: $("#tilesheetTemplate")[0].innerHTML,
     module: null,
     canvas: null,
     id: idNum,
@@ -54,7 +54,7 @@ function createTilesetModule(idNum, image, iconimage) {
       console.log("Tileset Render");
       
       //create html
-      parent.tabUL.innerHTML += Mustache.render(tabTemplate, {iconImg: this.icon, n: this.id});
+      parent.tabUL.innerHTML += Mustache.render(tabTemplate., {iconImg: this.icon, n: this.id});
       parent.module.innerHTML += Mustache.render(tilesheetTemplate, {n: this.id});
       this.module = {tabHead: parent.module.find("#tabHead-"+id), tab: parent.module.find("tabs-"+id)};
       this.canvas = module.tab.find("canvas");

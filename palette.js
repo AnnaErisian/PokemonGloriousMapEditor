@@ -35,7 +35,6 @@ var paletteModule = {
   },
   createModule: function() { //called once and only once
     console.log("Palette Create");
-    console.log(this);
     
     //find area
     this.module = $( '#paletteModule' );

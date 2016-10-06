@@ -54,22 +54,8 @@ function createTilesetModule(idNum, image, iconimage) {
       console.log("Tileset Render");
       
       //create html
-      /*
-      console.log(tabTemplate);
-      console.log(tilesheetTemplate);
-      console.log(tabTemplate.toString());
-      console.log(tilesheetTemplate.toString());
-      console.log(""+tabTemplate);
-      console.log(""+tilesheetTemplate);
-      console.log(typeof tabTemplate);
-      console.log(typeof tilesheetTemplate);
-      console.log(tabTemplate.innerHTML);
-      console.log(tilesheetTemplate.innerHTML);
-      */
       var renderedTab = Mustache.render(tabTemplate.innerHTML, {iconImg: this.icon, n: this.id});
       var renderedSheet = Mustache.render(tilesheetTemplate.innerHTML, {n: this.id});
-      console.log(renderedTab);
-      console.log(renderedSheet);
       parent.tabUL.append(renderedTab);
       parent.module.append(renderedSheet);
       var tabvar = parent.module.find("tabs-"+this.id);

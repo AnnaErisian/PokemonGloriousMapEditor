@@ -55,8 +55,12 @@ function createTilesetModule(idNum, image, iconimage) {
       
       //create html
       console.log(tabTemplate);
-      parent.tabUL.html("" + parent.tabUL.html() + (Mustache.render(tabTemplate+"", {iconImg: this.icon, n: this.id})+""));
-      parent.module.html("" + parent.module.html() + (Mustache.render(tilesheetTemplate+"", {n: this.id})+""));
+      console.log(tilesheetTemplate);
+      var renderedTab = Mustache.render(tabTemplate, {iconImg: this.icon, n: this.id});
+      var renderedSheet = Mustache.render(tilesheetTemplate, {n: this.id});
+      console.log(renderedTab);
+      console.log(renderedSheet);
+      //add rendered bits to html
       var tabvar = parent.module.find("tabs-"+this.id);
       var tabHeadVar = parent.module.find("#tabHead-"+this.id);
       this.module = {tabHead: tabHeadVar, tab: tabvar};

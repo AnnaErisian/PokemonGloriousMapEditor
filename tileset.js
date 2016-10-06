@@ -58,6 +58,8 @@ function createTilesetModule(idNum, image, iconimage) {
       console.log(tilesheetTemplate);
       console.log(tabTemplate.toString());
       console.log(tilesheetTemplate.toString());
+      console.log(""+tabTemplate);
+      console.log(""+tilesheetTemplate);
       console.log(typeof tabTemplate);
       console.log(typeof tilesheetTemplate);
       var renderedTab = Mustache.render(tabTemplate, {iconImg: this.icon, n: this.id});

@@ -64,9 +64,9 @@ function createTilesetModule(idNum, image, iconimage) {
       this.canvas = this.module.tab.find("canvas");
     },
     registerEvents: function() {
-      canvas.addEventListener("mousedown", function() { this.startSetSelection(event); });
-      canvas.addEventListener("mouseup", function() { this.startSetSelection(event); });
-      canvas.addEventListener("mouseleave", function() { this.terminateSetSelection(event); });
+      this.canvas.addEventListener("mousedown", function() { this.startSetSelection(event); });
+      this.canvas.addEventListener("mouseup", function() { this.startSetSelection(event); });
+      this.canvas.addEventListener("mouseleave", function() { this.terminateSetSelection(event); });
     }
   };
 }

@@ -49,7 +49,7 @@ var mapModule = {
   },
   registerEvents: function() {
     this.canvas.addEventListener("mousedown",  (function(event) { this.startSetSelection(event); }).bind(this));
-    this.canvas.addEventListener("mouseup",    (function(event) { this.startSetSelection(event); }).bind(this));
+    this.canvas.addEventListener("mouseup",    (function(event) { this.finishSetSelection(event); }).bind(this));
     this.canvas.addEventListener("mouseleave", (function(event) { this.terminateSetSelection(event); }).bind(this));
   }
 };

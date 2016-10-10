@@ -15,7 +15,7 @@ var layerModule = {
     //create html
     this.module = $("#layerModule");
     for(i = 0; i < 5; i++) {
-      this.module.append(Mustache.render(this.buttonTemplate[0].innerHTML, {n: i}));
+      this.module.append(Mustache.render(this.buttonTemplate.innerHTML, {n: i}));
     }
   },
   registerEvents: function() {

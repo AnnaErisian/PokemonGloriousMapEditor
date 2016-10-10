@@ -94,12 +94,12 @@ function prepareApplication() {
     //render page
     mapModule.render();
     paletteModule.render();
-//    layerModule.render();
+    layerModule.render();
 //    managementModule.render();
 
     mapModule.registerEvents();
     paletteModule.registerEvents();
-//    layerModule.registerEvents();
+    layerModule.registerEvents();
 //    managementModule.registerEvents();
     
   }, function(response) {

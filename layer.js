@@ -21,10 +21,20 @@ var layerModule = {
   registerEvents: function() {
     var buttons = this.module.find(".layerButton");
     
-    for(i = 0; i < 5; i++) {
-      buttons[i].addEventListener("click", (function() {
-        this.setActiveLayer(i+0); //passing is wierd.
-      }).bind(this));
-    }
+    buttons[0].addEventListener("click", (function() {
+      this.setActiveLayer(0); //passing is wierd.
+    }).bind(this));
+    buttons[1].addEventListener("click", (function() {
+      this.setActiveLayer(1); //passing is wierd.
+    }).bind(this));
+    buttons[2].addEventListener("click", (function() {
+      this.setActiveLayer(2); //passing is wierd.
+    }).bind(this));
+    buttons[3].addEventListener("click", (function() {
+      this.setActiveLayer(3); //passing is wierd.
+    }).bind(this));
+    buttons[4].addEventListener("click", (function() {
+      this.setActiveLayer(4); //passing is wierd.
+    }).bind(this));
   }
 };

@@ -1,5 +1,6 @@
 var mapModule = {
   module: null,
+  canvas: null,
   mapData: null,
   startCoordinates: [-1,-1],
   
@@ -8,6 +9,8 @@ var mapModule = {
     var coords = getCursorPosition(canvas, event);
     this.startCoordinates[0] = coords.x/32;
     this.startCoordinates[1] = coords.y/32;
+    
+    console.log("start with " + this.startCoordinates[0] + " " + this.startCoordinates[1] + ".");
   },
   
   finishSetSelection: function(event) {
@@ -23,7 +26,10 @@ var mapModule = {
     
     //Set data
     
+    console.log("start with " + coords.x + " " + coords.y + ".");
+    
     this.startCoordinates = [-1, -1];
+    
   },
   
   terminateSetSelection: function(event) {
@@ -37,6 +43,13 @@ var mapModule = {
   render: function(parent) {
     console.log("Map Render");
     //create html
+    $("#canvasModule").append("<canvas></canvas>");
     this.module = $("#canvasModule");
+    this.canvas = this.module.find("canvas")[0];
+  },
+  registerEvents: function() {
+    canvas.addEventListener("mousedown", function() { mapModule.startSetSelection(event); });
+    canvas.addEventListener("mouseup", function() { mapModule.startSetSelection(event); });
+    canvas.addEventListener("mouseleave", function() { mapModule.terminateSetSelection(event); });
   }
 };

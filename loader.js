@@ -96,6 +96,11 @@ function prepareApplication() {
     paletteModule.render();
 //    layerModule.render();
 //    managementModule.render();
+
+    mapModule.registerEvents();
+    paletteModule.registerEvents();
+//    layerModule.registerEvents();
+//    managementModule.registerEvents();
     
   }, function(response) {
     console.log('Error: ' + response.result.error.message);

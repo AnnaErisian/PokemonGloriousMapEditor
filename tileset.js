@@ -62,6 +62,11 @@ function createTilesetModule(idNum, image, iconimage) {
       var tabHeadVar = parent.module.find("#tabHead-"+this.id);
       this.module = {tabHead: tabHeadVar, tab: tabvar};
       this.canvas = this.module.tab.find("canvas");
+    },
+    registerEvents: function() {
+      canvas.addEventListener("mousedown", function() { this.startSetSelection(event); });
+      canvas.addEventListener("mouseup", function() { this.startSetSelection(event); });
+      canvas.addEventListener("mouseleave", function() { this.terminateSetSelection(event); });
     }
   };
 }

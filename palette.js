@@ -48,5 +48,11 @@ var paletteModule = {
     
     this.module.tabs();
     
+  },
+  registerEvents: function() {
+    var numTilesets = this.tilesets.length;
+    for(i = 0; i < numTilesets; i++) {
+      this.tilesetModules[i].registerEvents();
+    }
   }
 };

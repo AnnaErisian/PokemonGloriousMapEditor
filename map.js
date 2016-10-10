@@ -20,7 +20,7 @@ var mapModule = {
       return;
     }
     //otherwise, calculate current selection and reset start coords
-    var coords = getCursorPosition(canvas, event);
+    var coords = getCursorPosition(this.canvas, event);
     coords.x = coords.x/32;
     coords.y = coords.y/32;
     

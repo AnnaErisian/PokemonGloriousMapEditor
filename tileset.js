@@ -34,7 +34,7 @@ function createTilesetModule(idNum, image, iconimage) {
         return;
       }
       //otherwise, calculate current selection and reset start coords
-      var coords = getCursorPosition(this.canvas, this.event);
+      var coords = getCursorPosition(this.canvas, event);
       coords.x = coords.x/32;
       coords.y = coords.y/32;
       this.currentSelection = {

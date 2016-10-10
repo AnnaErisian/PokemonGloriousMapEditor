@@ -10,7 +10,7 @@ var mapModule = {
     this.startCoordinates[0] = Math.floor(coords.x/32);
     this.startCoordinates[1] = Math.floor(coords.y/32);
     
-    console.log("start with " + this.startCoordinates[0] + " " + this.startCoordinates[1] + ".");
+    console.log("start with " + this.startCoordinates[0] + ", " + this.startCoordinates[1] + ".");
   },
   
   finishSetSelection: function(event) {
@@ -26,7 +26,7 @@ var mapModule = {
     
     //Set data
     
-    console.log("start with " + coords.x + " " + coords.y + ".");
+    console.log("finish with " + coords.x + ", " + coords.y + ".");
     
     this.startCoordinates = [-1, -1];
     

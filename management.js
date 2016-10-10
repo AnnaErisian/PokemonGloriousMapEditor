@@ -1,4 +1,4 @@
-var mapModule = {
+var managementModule = {
   module: null,
   
   createModule() {

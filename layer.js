@@ -1,4 +1,4 @@
-var mapModule = {
+var layerModule = {
   module: null,
   activeLayer: null,
   setActiveLayer: function(newLayerNumber) {

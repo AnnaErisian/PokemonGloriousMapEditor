@@ -25,10 +25,10 @@ var layerModule = {
       layerModule.setActiveLayer(0); //passing is wierd.
       console.log(this);
     });
-    buttons[0].addEventListener("click", function() {
-      layerModule.setActiveLayer(0); //passing is wierd.
-      this.style.box-shadow = "0px 0px 5px white";
-          });
+    buttons[1].addEventListener("click", function() {
+      layerModule.setActiveLayer(1); //passing is wierd.
+      this.setAttribute("box-shadow", "0px 0px 5px white");
+    });
     buttons[2].addEventListener("click", (function() {
       this.setActiveLayer(2); //passing is wierd.
     }).bind(this));

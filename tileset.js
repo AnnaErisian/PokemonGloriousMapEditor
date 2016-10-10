@@ -58,7 +58,7 @@ function createTilesetModule(idNum, image, iconimage) {
       var renderedSheet = Mustache.render(tilesheetTemplate.innerHTML, {n: this.id});
       parent.tabUL.append(renderedTab);
       parent.module.append(renderedSheet);
-      var tabvar = parent.module.find("tabs-"+this.id);
+      var tabvar = parent.module.find("#tabs-"+this.id);
       var tabHeadVar = parent.module.find("#tabHead-"+this.id);
       this.module = {tabHead: tabHeadVar[0], tab: tabvar[0]};
       this.canvas = this.module.tab.find("canvas")[0];

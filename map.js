@@ -48,8 +48,8 @@ var mapModule = {
     this.canvas = this.module.find("canvas")[0];
   },
   registerEvents: function() {
-    this.canvas.addEventListener("mousedown",  function(event) { this.startSetSelection(event); });
-    this.canvas.addEventListener("mouseup",    function(event) { this.startSetSelection(event); });
-    this.canvas.addEventListener("mouseleave", function(event) { this.terminateSetSelection(event); });
+    this.canvas.addEventListener("mousedown",  (function(event) { this.startSetSelection(event); }).bind(this));
+    this.canvas.addEventListener("mouseup",    (function(event) { this.startSetSelection(event); }).bind(this));
+    this.canvas.addEventListener("mouseleave", (function(event) { this.terminateSetSelection(event); }).bind(this));
   }
 };

@@ -58,10 +58,10 @@ function createTilesetModule(idNum, image, iconimage) {
       var renderedSheet = Mustache.render(tilesheetTemplate.innerHTML, {n: this.id});
       parent.tabUL.append(renderedTab);
       parent.module.append(renderedSheet);
-      var tabvar = parent.module.find("#tabs-"+this.id);
+      var tabVar = parent.module.find("#tabs-"+this.id);
       var tabHeadVar = parent.module.find("#tabHead-"+this.id);
       this.canvas = tabVar.find("canvas")[0];
-      this.module = {tabHead: tabHeadVar[0], tab: tabvar[0]};
+      this.module = {tabHead: tabHeadVar[0], tab: tabVar[0]};
     },
     registerEvents: function() {
       this.canvas.addEventListener("mousedown", function() { this.startSetSelection(event); });

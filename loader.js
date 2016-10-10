@@ -89,7 +89,8 @@ function prepareApplication() {
     
     //send map data to MapModule
     mapModule.createModule(data);
-    paletteModule.createModule(data);
+    paletteModule.createModule();
+	layerModule.createModule();
     
     //render page
     mapModule.render();

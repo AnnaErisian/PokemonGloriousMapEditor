@@ -11,7 +11,7 @@ var layerModule = {
   render: function() {
 	console.log("Layer Module Render");
     //create html
-    this.module = $("#layerModule")[0];
+    this.module = $("#layerModule");
     for(i = 0; i < 5; i++) {
       this.module.append('<span class="layerButton" id="layerButton-' + i + '" ><img src="layerImage-' + i + '" alt="layer-' + i + '" /></span>');
     }

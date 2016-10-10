@@ -60,8 +60,8 @@ function createTilesetModule(idNum, image, iconimage) {
       parent.module.append(renderedSheet);
       var tabvar = parent.module.find("#tabs-"+this.id);
       var tabHeadVar = parent.module.find("#tabHead-"+this.id);
+      this.canvas = tabVar.find("canvas")[0];
       this.module = {tabHead: tabHeadVar[0], tab: tabvar[0]};
-      this.canvas = this.module.tab.find("canvas")[0];
     },
     registerEvents: function() {
       this.canvas.addEventListener("mousedown", function() { this.startSetSelection(event); });

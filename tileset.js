@@ -23,8 +23,8 @@ function createTilesetModule(idNum, image, iconimage) {
     startSetSelection: function(event) {
       //set startCoords to current coords (32px squares, we want 1-8th square number)
       var coords = getCursorPosition(this.canvas, event);
-      this.startCoordinates[0] = coords.x/32;
-      this.startCoordinates[1] = coords.y/32;
+      this.startCoordinates[0] = Math.floor(coords.x/32);
+      this.startCoordinates[1] = Math.floor(coords.y/32);
     },
     
     finishSetSelection: function(event) {
@@ -35,8 +35,8 @@ function createTilesetModule(idNum, image, iconimage) {
       }
       //otherwise, calculate current selection and reset start coords
       var coords = getCursorPosition(this.canvas, event);
-      coords.x = coords.x/32;
-      coords.y = coords.y/32;
+      coords.x = Math.floor(coords.x/32);
+      coords.y = Math.floor(coords.y/32);
       this.currentSelection = {
         x: coords.x,
         y: coords.y,

@@ -1,5 +1,6 @@
 var layerModule = {
   module: null,
+  buttonTemplate: null,
   activeLayer: null,
   setActiveLayer: function(newLayerNumber) {
     this.activeLayer = newLayerNumber;
@@ -7,13 +8,14 @@ var layerModule = {
   },
   createModule() {
     console.log("Layer Module Creation");
+	this.buttonTemplate = $("#layerButtonTemplate")[0];
   },
   render: function() {
 	console.log("Layer Module Render");
     //create html
     this.module = $("#layerModule");
     for(i = 0; i < 5; i++) {
-      this.module.append('<span class="layerButton" id="layerButton-' + i + '" ><img src="img/ui/layerImage-' + i + '" alt="layer-' + i + '.png" /></span>');
+      this.module.append(Mustache.render(buttonTemplate.innerHTML, {n: i}));
     }
   },
   registerEvents: function() {

@@ -13,7 +13,7 @@ var layerModule = {
     //create html
     this.module = $("#layerModule");
     for(i = 0; i < 5; i++) {
-      this.module.append('<span class="layerButton" id="layerButton-' + i + '" ><img src="img/ui/layerImage-' + i + '" alt="layer-' + i + '" /></span>');
+      this.module.append('<span class="layerButton" id="layerButton-' + i + '" ><img src="img/ui/layerImage-' + i + '" alt="layer-' + i + '.png" /></span>');
     }
   },
   registerEvents: function() {

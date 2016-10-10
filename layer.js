@@ -22,7 +22,9 @@ var layerModule = {
     var buttons = this.module.find(".layerButton");
     
     for(i = 0; i < 5; i++) {
-      buttons[i].addEventListener("click", (function() {this.setActiveLayer(i);}).bind(this));
+      buttons[i].addEventListener("click", (function() {
+        this.setActiveLayer(i+0); //passing is wierd.
+      }).bind(this));
     }
   }
 };

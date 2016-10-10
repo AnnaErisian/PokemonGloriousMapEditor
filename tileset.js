@@ -22,7 +22,7 @@ function createTilesetModule(idNum, image, iconimage) {
     
     startSetSelection: function(event) {
       //set startCoords to current coords (32px squares, we want 1-8th square number)
-      var coords = getCursorPosition(canvas, event);
+      var coords = getCursorPosition(this.canvas, event);
       this.startCoordinates[0] = coords.x/32;
       this.startCoordinates[1] = coords.y/32;
     },

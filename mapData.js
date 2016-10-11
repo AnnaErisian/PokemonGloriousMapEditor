@@ -34,11 +34,11 @@ var mapData = {
     var numRows;
     if(numCols == 0) {
     
-      tileData = new Array(8);
+      this.tileData = new Array(8);
       for(i = 0; i < 8; i++) {
-        tileData[i] = new Array(8);
+        this.tileData[i] = new Array(8);
         for(j = 0; j < 8; j++) {
-          tileData[i][j] = new tile();
+          this.tileData[i][j] = new tile();
         }
       }
       
@@ -47,11 +47,11 @@ var mapData = {
     } else {
       numRows = data[0].length;
       
-      tileData = new Array(numCols);
+      this.tileData = new Array(numCols);
       for(i = 0; i < numCols; i++) {
-        tileData[i] = new Array(numRows);
+        this.tileData[i] = new Array(numRows);
         for(j = 0; j < numRows; j++) {
-          tileData[i][j] = new tile(data[i][j]);
+          this.tileData[i][j] = new tile(data[i][j]);
         }
       }
     }

@@ -54,6 +54,7 @@ var mapData = {
       for(i = 0; i < numCols; i++) {
         this.tileData[i] = new Array(numRows);
         for(j = 0; j < numRows; j++) {
+          console.log(i + ", " + j);
           this.tileData[i][j] = new tile(data[i][j]);
         }
       }

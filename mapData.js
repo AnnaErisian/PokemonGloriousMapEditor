@@ -30,6 +30,9 @@ var mapData = {
     }
   },
   init: function(data) {
+  
+    console.log(data);
+  
     var numCols = data.length;
     var numRows;
     if(numCols == 0) {

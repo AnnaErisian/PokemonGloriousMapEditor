@@ -79,11 +79,15 @@ class tile {
       var e = data.split("|");
       this.data = new Array(5);
       for(var k = 0; k < 5; k++) {
-        this.data[k] = e[k];
+        var dk = e[k].split(",");
+        this.data[k] = [dk[0], dk[1]];
       }
       this.text = e[5];
     } else {
       this.data = new Array(5);
+      for(var k = 0; k < 5; k++) {
+        this.data[k] = [-1,-1];
+      }
       this.text = "";
     }
   }

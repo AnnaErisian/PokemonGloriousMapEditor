@@ -51,9 +51,9 @@ var mapData = {
       numRows = data[0].length;
       
       this.tileData = new Array(numCols);
-      for(i = 0; i < numCols; i++) {
+      for(var i = 0; i < numCols; i++) {
         this.tileData[i] = new Array(numRows);
-        for(j = 0; j < numRows; j++) {
+        for(var j = 0; j < numRows; j++) {
           console.log(i + ", " + j);
           this.tileData[i][j] = new tile(data[i][j]);
         }
@@ -78,7 +78,7 @@ class tile {
     if(arguments.length > 0) {
       var e = data.split("|");
       this.data = new Array(5);
-      for(k = 0; k < 5; k++) {
+      for(var k = 0; k < 5; k++) {
         this.data[k] = e[k];
       }
       this.text = e[5];

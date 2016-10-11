@@ -9,7 +9,7 @@ var layerModule = {
   glowActiveLayer: function() {
     var buttons = this.module.find(".layerButton");
     buttons.css('box-shadow', 'none');
-    buttons[this.activeLayer].boxShadow = "0px 0px 5px white";
+    buttons[this.activeLayer].style.boxShadow = "0px 0px 5px white";
   },
   createModule() {
     console.log("Layer Module Creation");

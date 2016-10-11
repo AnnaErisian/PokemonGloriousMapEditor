@@ -78,8 +78,8 @@ class tile {
     if(arguments.length > 0) {
       var e = data.split("|");
       this.data = new Array(5);
-      for(i = 0; i < 5; i++) {
-        this.data[i] = e[i];
+      for(k = 0; k < 5; k++) {
+        this.data[k] = e[k];
       }
       this.text = e[5];
     } else {

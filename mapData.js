@@ -22,9 +22,10 @@ var mapData = {
   },
   addColRight: function() {
     var numRows = this.tileData[0].length;
+    var numCols = this.tileData.length;
+    
     this.tileData.push(new Array(numRows));
 
-    var numCols = this.tileData.length;
     for(var i = 0; i < numRows; i++) {
       this.tileData[numCols][i] = new tile();
     }

@@ -2,13 +2,13 @@ var mapData = {
   tileData: null, //column major
   addRowTop: function() {
     var numCols = tileData.length;
-    for(i = 0; i < numCols; i++) {
+    for(var i = 0; i < numCols; i++) {
       this.tileData[i].unshift(new tile());
     }
   },
   addRowBot: function() {
     var numCols = tileData.length;
-    for(i = 0; i < numCols; i++) {
+    for(var i = 0; i < numCols; i++) {
       this.tileData[i].push(new tile());
     }
   },
@@ -16,7 +16,7 @@ var mapData = {
     var numRows = tileData[0].length;
     this.tileData.unshift(new Array(numRows));
 
-    for(i = 0; i < numRows; i++) {
+    for(var i = 0; i < numRows; i++) {
       this.tileData[0][i] = new tile();
     }
   },
@@ -25,7 +25,7 @@ var mapData = {
     this.tileData.push(new Array(numRows));
 
     var numCols = tileData.length;
-    for(i = 0; i < numRows; i++) {
+    for(var i = 0; i < numRows; i++) {
       this.tileData[numCols][i] = new tile();
     }
   },
@@ -38,9 +38,9 @@ var mapData = {
     if(numCols == 0) {
     
       this.tileData = new Array(8);
-      for(i = 0; i < 8; i++) {
+      for(var i = 0; i < 8; i++) {
         this.tileData[i] = new Array(8);
-        for(j = 0; j < 8; j++) {
+        for(var j = 0; j < 8; j++) {
           this.tileData[i][j] = new tile();
         }
       }
@@ -62,8 +62,8 @@ var mapData = {
     
   },
   setRect: function(x, y, l, h, layer) {
-    for(i = x; i < x+l; i++) {
-      for(j = y; j < y+h; j++) {
+    for(var i = x; i < x+l; i++) {
+      for(var j = y; j < y+h; j++) {
         //TODO
       }
     }

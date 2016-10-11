@@ -80,7 +80,7 @@ class tile {
       this.data = new Array(5);
       for(var k = 0; k < 5; k++) {
         var dk = e[k].split(",");
-        this.data[k] = [dk[0], dk[1]];
+        this.data[k] = [parseInt(dk[0]), parseInt(dk[1])];
       }
       this.text = e[5];
     } else {

@@ -30,7 +30,32 @@ var mapData = {
     }
   },
   init: function(data) {
-    console.log(data);
+    var numCols = data.length;
+    var numRows;
+    if(numCols == 0) {
+    
+      tileData = new Array(8);
+      for(i = 0; i < 8; i++) {
+        tileData[i] = new Array(8);
+        for(j = 0; j < 8; j++) {
+          tileData[i][j] = new tile();
+        }
+      }
+      
+      return;
+      
+    } else {
+      numRows = data[0].length;
+      
+      tileData = new Array(numCols);
+      for(i = 0; i < numCols; i++) {
+        tileData[i] = new Array(numRows);
+        for(j = 0; j < numRows; j++) {
+          tileData[i][j] = new tile(data[i][j]);
+        }
+      }
+    }
+    
   },
   setRect: function(x, y, l, h, layer) {
     for(i = x; i < x+l; i++) {
@@ -43,3 +68,23 @@ var mapData = {
     return tileData[x][y].getID(layer);
   }
 };
+
+class tile {
+  constructor(data) {
+    if(arguments.length > 0) {
+      var e = data.split("|");
+      this.data = new Array(5);
+      for(i = 0; i < 5; i++) {
+        this.data[i] = e[i];
+      }
+      this.text = e[5];
+    } else {
+      this.data = new Array(5);
+      this.text = "";
+    }
+  }
+  
+  getID(layer) {
+    return data[layer];
+  }
+}

@@ -1,19 +1,19 @@
 var mapData = {
   tileData: null, //column major
   addRowTop: function() {
-    var numCols = tileData.length;
+    var numCols = this.tileData.length;
     for(var i = 0; i < numCols; i++) {
       this.tileData[i].unshift(new tile());
     }
   },
   addRowBot: function() {
-    var numCols = tileData.length;
+    var numCols = this.tileData.length;
     for(var i = 0; i < numCols; i++) {
       this.tileData[i].push(new tile());
     }
   },
   addColLeft: function() {
-    var numRows = tileData[0].length;
+    var numRows = this.tileData[0].length;
     this.tileData.unshift(new Array(numRows));
 
     for(var i = 0; i < numRows; i++) {
@@ -21,10 +21,10 @@ var mapData = {
     }
   },
   addColRight: function() {
-    var numRows = tileData[0].length;
+    var numRows = this.tileData[0].length;
     this.tileData.push(new Array(numRows));
 
-    var numCols = tileData.length;
+    var numCols = this.tileData.length;
     for(var i = 0; i < numRows; i++) {
       this.tileData[numCols][i] = new tile();
     }

@@ -4,6 +4,7 @@ function createTilesetModule(idNum, image, iconimage) {
     tilesheetTemplate: "" + $("#tilesheetTemplate")[0].innerHTML,
     module: null,
     canvas: null,
+    image: null,
     id: idNum,
     tileset: image,
     icon: iconimage,
@@ -56,17 +57,36 @@ function createTilesetModule(idNum, image, iconimage) {
       //create html
       var renderedTab = Mustache.render(tabTemplate.innerHTML, {iconImg: this.icon, n: this.id});
       var renderedSheet = Mustache.render(tilesheetTemplate.innerHTML, {n: this.id});
+      
       parent.tabUL.append(renderedTab);
       parent.module.append(renderedSheet);
+      
       var tabVar = parent.module.find("#tabs-"+this.id);
       var tabHeadVar = parent.module.find("#tabHead-"+this.id);
+      
       this.canvas = tabVar.find("canvas")[0];
       this.module = {tabHead: tabHeadVar[0], tab: tabVar[0]};
+      
+      this.image = new Image();
+      
+      //load image, then continue when done
+      this.image = new Image();
+      this.image.src = window.location.href + tileset;
+      while(!this.image.complete) {} //This is SO BAD
+      
+      //prepare canvas
+      this.canvas.width = image.width;
+      this.canvas.height = image.height;
+      this.drawImageToCanvas();
     },
     registerEvents: function() {
       this.canvas.addEventListener("mousedown",  (function(event) { this.startSetSelection(event); }).bind(this));
       this.canvas.addEventListener("mouseup",    (function(event) { this.finishSetSelection(event); }).bind(this));
       this.canvas.addEventListener("mouseleave", (function(event) { this.terminateSetSelection(event); }).bind(this));
+    },
+    drawImageToCanvas: function() {
+      var ctx = this.canvas.getContext("2d");
+      ctx.drawImage(this.image, 0, 0);
     }
   };
 }

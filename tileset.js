@@ -71,7 +71,7 @@ function createTilesetModule(idNum, image, iconimage) {
       
       //load image, then continue when done
       this.image = new Image();
-      this.image.src = window.location.href + tileset;
+      this.image.src = window.location.href + this.tileset;
       while(!this.image.complete) {} //This is SO BAD
       
       //prepare canvas

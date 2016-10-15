@@ -2,7 +2,7 @@ var paletteModule = {
   module: null,
   tabUL: null,
   activeTileset: 0,
-  tilesets: [], //stored for creation of tilesetsModules
+  tilesetURIs: [], //stored for creation of tilesetsModules
   icons: [], //stored for creation of tilesetsModules
   tilesetModules: [], //holds the tilesetModules
   setActiveTileset: function(event) {
@@ -12,7 +12,7 @@ var paletteModule = {
     return this.tilesetModules[activeTileset].getCurrentSelection();
   },
   setTilesets: function(newTilesetsArray, newIconsArray) { //param: [], []
-    this.tilesets = newTilesetsArray;
+    this.tilesetURIs = newTilesetsArray;
     this.icons = newIconsArray;
     console.log(newTilesetsArray);
   },
@@ -20,7 +20,7 @@ var paletteModule = {
     console.log("Palette Render");
   
     //add new tilesets
-    var numTilesets = this.tilesets.length;
+    var numTilesets = this.tilesetURIs.length;
     for(i = 0; i < numTilesets; i++) {
       //if the module doesn't exist in the html, create it
       if(this.tilesetModules[i].module == null) {
@@ -41,16 +41,16 @@ var paletteModule = {
     this.tabUL = this.module.find('ul');
     
     //create tileset modules
-    var numTilesets = this.tilesets.length;
+    var numTilesets = this.tilesetURIs.length;
     for(i = 0; i < numTilesets; i++) {
-      this.tilesetModules[i] = createTilesetModule(i, this.tilesets[i], this.icons[i]);
+      this.tilesetModules[i] = createTilesetModule(i, this.tilesetURIs[i], this.icons[i]);
     }
     
     this.module.tabs();
     
   },
   registerEvents: function() {
-    var numTilesets = this.tilesets.length;
+    var numTilesets = this.tilesetURIs.length;
     for(i = 0; i < numTilesets; i++) {
       this.tilesetModules[i].registerEvents();
     }

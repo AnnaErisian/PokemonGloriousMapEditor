@@ -41,8 +41,8 @@ function createTilesetModule(idNum, image, iconimage) {
       this.currentSelection = {
         x: this.startCoordinates[0],
         y: this.startCoordinates[1],
-        w: coords.x - this.startCoordinates[0],
-        h: coords.y - this.startCoordinates[1],
+        w: coords.x - this.startCoordinates[0] + 1,
+        h: coords.y - this.startCoordinates[1] + 1,
       };
       this.startCoordinates = [-1, -1];
     },

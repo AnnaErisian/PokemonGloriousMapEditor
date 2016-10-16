@@ -14,7 +14,7 @@ function createTilesetModule(idNum, image, iconimage) {
     getCurrentSelection: function() { //returns {i,x,y,w,h}
       console.log("id in getCurrentSelection in tilesetModule: " + this.id);
       return {
-        i: this.id,
+        id: this.id,
         x: this.currentSelection.x,
         y: this.currentSelection.y,
         w: this.currentSelection.w,

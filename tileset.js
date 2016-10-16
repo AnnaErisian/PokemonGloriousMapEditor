@@ -1,5 +1,6 @@
 function createTilesetModule(idNum, image, iconimage) {
   return {
+    ready: false,
     tabTemplate: "" + $("#tabTemplate")[0].innerHTML,
     tilesheetTemplate: "" + $("#tilesheetTemplate")[0].innerHTML,
     module: null,
@@ -96,6 +97,8 @@ function createTilesetModule(idNum, image, iconimage) {
       console.log("this in drawImageToCanvas:")
       console.log(this);
       ctx.drawImage(this.image, 0, 0);
+      this.ready = true;
+      mapModule.drawCanvasIfReady();
     }
   };
 }

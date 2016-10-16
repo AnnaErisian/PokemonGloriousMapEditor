@@ -48,7 +48,8 @@ var mapModule = {
     $("#canvasModule").append("<canvas></canvas>");
     this.module = $("#canvasModule");
     this.canvas = this.module.find("canvas")[0];
-    this.drawCanvas();
+    this.drawCanvasIfReady();
+    this.setUpCanvas()
   },
   registerEvents: function() {
     this.canvas.addEventListener("mousedown",  (function(event) { this.startSetSelection(event); }).bind(this));

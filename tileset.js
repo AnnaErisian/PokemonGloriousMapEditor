@@ -71,12 +71,14 @@ function createTilesetModule(idNum, image, iconimage) {
       
       //load image, then continue when done
       this.image = new Image();
+      this.image.callAfterLoading = this.drawImagetoCanvas();
+      this.image.canvas = this.canvas;
       
       this.image.onload = function() {
         //prepare canvas
-        this.canvas.width = image.width;
-        this.canvas.height = image.height;
-        this.drawImageToCanvas();
+        this.canvas.width = this.image.width;
+        this.canvas.height = this.image.height;
+        callAfterLoading();
       }
       
       this.image.src = this.tileset;

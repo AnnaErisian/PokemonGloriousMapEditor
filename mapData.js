@@ -70,7 +70,7 @@ var mapData = {
         this.tileData[x+i][y+j].data[layer][0] = tiles.id;
         var tileX = tiles.x + i % tiles.w;
         var tileY = tiles.y + j % tiles.h;
-//        console.log("tilevars: " + tileX + " " + tileY);
+        console.log("tilevars:\nx: " + tileX + "\ny: " + tileY + "\ncomputed: " + tileY * 8 + tileX);
         this.tileData[x+i][y+j].data[layer][1] = tileY * 8 + tileX;
       }
     }

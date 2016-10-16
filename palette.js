@@ -5,8 +5,8 @@ var paletteModule = {
   tilesetURIs: [], //stored for creation of tilesetsModules
   icons: [], //stored for creation of tilesetsModules
   tilesetModules: [], //holds the tilesetModules
-  setActiveTileset: function(event) {
-    
+  updateActiveTileset: function() { //maintain module tracking of active tab
+    this.activeTileset = module.tabs( "option", "active" );
   },
   getCurrentSelection: function() { //return: {i,x,y,l,h}
     return this.tilesetModules[activeTileset].getCurrentSelection();
@@ -46,7 +46,11 @@ var paletteModule = {
       this.tilesetModules[i] = createTilesetModule(i, this.tilesetURIs[i], this.icons[i]);
     }
     
-    this.module.tabs();
+    this.module.tabs({
+      activate: function( event, ui ) {
+        paletteModule.updateActiveTileset();
+      }
+    });
     
   },
   registerEvents: function() {

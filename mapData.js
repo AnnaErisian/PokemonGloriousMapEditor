@@ -31,9 +31,6 @@ var mapData = {
     }
   },
   init: function(data) {
-  
-    console.log(data);
-  
     var numCols = data.length;
     var numRows;
     if(numCols == 0) {
@@ -55,7 +52,6 @@ var mapData = {
       for(var i = 0; i < numCols; i++) {
         this.tileData[i] = new Array(numRows);
         for(var j = 0; j < numRows; j++) {
-          console.log(i + ", " + j);
           this.tileData[i][j] = new tile(data[i][j]);
         }
       }
@@ -63,8 +59,6 @@ var mapData = {
     
   },
   setRect: function(x, y, w, h) {
-    console.log(x + " " + y + " " + w + " " + h);
-    
     var tiles = paletteModule.getCurrentSelection();
     var tileX = 0;
     var tileY = 0;
@@ -72,11 +66,11 @@ var mapData = {
     
     for(var i = 0; i < w; i++) {
       for(var j = 0; j < h; j++) {
-        console.log("input: \nid: " + tiles.id + "\nx: " + tiles.x + "\ny: " + tiles.y + "\nw: " + tiles.w + "\nh: " + tiles.h + "\ni: " + i + "\nj: " + j);
+//        console.log("input: \nid: " + tiles.id + "\nx: " + tiles.x + "\ny: " + tiles.y + "\nw: " + tiles.w + "\nh: " + tiles.h + "\ni: " + i + "\nj: " + j);
         this.tileData[x+i][y+j].data[layer][0] = tiles.id;
         var tileX = tiles.x + i % tiles.w;
         var tileY = tiles.y + j % tiles.h;
-        console.log("tilevars: " + tileX + " " + tileY);
+//        console.log("tilevars: " + tileX + " " + tileY);
         this.tileData[x+i][y+j].data[layer][1] = tileY * 8 + tileX;
       }
     }

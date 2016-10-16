@@ -14,10 +14,10 @@ function createTilesetModule(idNum, image, iconimage) {
     getCurrentSelection: function() { //returns {i,x,y,l,h}
       return {
         i: id,
-        x: currentSelection.x,
-        y: currentSelection.y,
-        l: currentSelection.l,
-        h: currentSelection.h
+        x: this.currentSelection.x,
+        y: this.currentSelection.y,
+        l: this.currentSelection.l,
+        h: this.currentSelection.h
       };
     },
     
@@ -41,8 +41,8 @@ function createTilesetModule(idNum, image, iconimage) {
       this.currentSelection = {
         x: coords.x,
         y: coords.y,
-        w: coords.x - startCoordinates[0],
-        h: coords.y - startCoordinates[1],
+        w: coords.x - this.startCoordinates[0],
+        h: coords.y - this.startCoordinates[1],
       };
       this.startCoordinates = [-1, -1];
     },

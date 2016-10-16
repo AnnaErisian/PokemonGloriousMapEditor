@@ -64,7 +64,7 @@ var mapModule = {
       if(!paletteModule.tilesetModules[i].ready)
         return;
     }
-    drawCanvas();
+    this.drawCanvas();
   },
   drawCanvas: function() {
     //TODO

@@ -57,8 +57,8 @@ var mapModule = {
     this.canvas.addEventListener("mouseleave", (function(event) { this.terminateSetSelection(event); }).bind(this));
   },
   setUpCanvas: function() {
-    canvas.width = mapData.tileData.length * 32;
-    canvas.height = mapData.tileData[0].length * 32;
+    this.canvas.width = mapData.tileData.length * 32;
+    this.canvas.height = mapData.tileData[0].length * 32;
   },
   drawCanvasIfReady: function() {
     for(var i = 0; i < paletteModule.tilesetModules.length; i++) {

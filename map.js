@@ -1,7 +1,6 @@
 var mapModule = {
   module: null,
   canvas: null,
-  mapData: null,
   startCoordinates: [-1,-1],
   
   startSetSelection: function(event) {
@@ -25,6 +24,7 @@ var mapModule = {
     coords.y = Math.floor(coords.y/32);
     
     //Set data
+    mapData.setRect(this.startCoordinates[0], this.startCoordinates[1], coords.x, coords.y);
     
     console.log("finish with " + coords.x + ", " + coords.y + ".");
     

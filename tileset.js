@@ -90,6 +90,10 @@ function createTilesetModule(idNum, image, iconimage) {
     },
     drawImageToCanvas: function() {
       var ctx = this.canvas.getContext("2d");
+      console.log("this.image in drawImageToCanvas:")
+      console.log(this.image);
+      console.log("this in drawImageToCanvas:")
+      console.log(this);
       ctx.drawImage(this.image, 0, 0);
     }
   };

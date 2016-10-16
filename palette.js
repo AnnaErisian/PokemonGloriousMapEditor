@@ -9,7 +9,7 @@ var paletteModule = {
     this.activeTileset = this.module.tabs( "option", "active" );
   },
   getCurrentSelection: function() { //return: {i,x,y,l,h}
-    return this.tilesetModules[activeTileset].getCurrentSelection();
+    return this.tilesetModules[this.activeTileset].getCurrentSelection();
   },
   setTilesets: function(newTilesetsArray, newIconsArray) { //param: [], []
     this.tilesetURIs = newTilesetsArray;

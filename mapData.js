@@ -63,6 +63,7 @@ var mapData = {
     
   },
   setRect: function(x, y, w, h) {
+    console.log(x + " " + y + " " + w + " " + h);
     for(var i = x; i < x+w; i++) {
       for(var j = y; j < y+h; j++) {
         //TODO

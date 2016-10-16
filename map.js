@@ -48,10 +48,25 @@ var mapModule = {
     $("#canvasModule").append("<canvas></canvas>");
     this.module = $("#canvasModule");
     this.canvas = this.module.find("canvas")[0];
+    this.drawCanvas();
   },
   registerEvents: function() {
     this.canvas.addEventListener("mousedown",  (function(event) { this.startSetSelection(event); }).bind(this));
     this.canvas.addEventListener("mouseup",    (function(event) { this.finishSetSelection(event); }).bind(this));
     this.canvas.addEventListener("mouseleave", (function(event) { this.terminateSetSelection(event); }).bind(this));
+  },
+  setUpCanvas: function() {
+    canvas.width = mapData.tileData.length * 32;
+    canvas.height = mapData.tileData[0].length * 32;
+  },
+  drawCanvasIfReady: function() {
+    for(var i = 0; i < paletteModule.tilesetModules.length; i++) {
+      if(!paletteModule.tilesetModules[i].ready)
+        return;
+    }
+    drawCanvas();
+  },
+  drawCanvas: function() {
+    //TODO
   }
 };

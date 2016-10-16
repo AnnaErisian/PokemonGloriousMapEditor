@@ -11,12 +11,12 @@ function createTilesetModule(idNum, image, iconimage) {
     currentSelection: null,
     startCoordinates: [-1,-1],
     
-    getCurrentSelection: function() { //returns {i,x,y,l,h}
+    getCurrentSelection: function() { //returns {i,x,y,w,h}
       return {
         i: this.id,
         x: this.currentSelection.x,
         y: this.currentSelection.y,
-        l: this.currentSelection.l,
+        w: this.currentSelection.w,
         h: this.currentSelection.h
       };
     },

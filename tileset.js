@@ -79,7 +79,7 @@ function createTilesetModule(idNum, image, iconimage) {
         this.drawImageToCanvas();
       }
       
-      this.image.src = '/' + this.tileset;
+      this.image.src = this.tileset;
     },
     registerEvents: function() {
       this.canvas.addEventListener("mousedown",  (function(event) { this.startSetSelection(event); }).bind(this));

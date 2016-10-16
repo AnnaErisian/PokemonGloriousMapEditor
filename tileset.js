@@ -71,13 +71,15 @@ function createTilesetModule(idNum, image, iconimage) {
       
       //load image, then continue when done
       this.image = new Image();
-      this.image.src = window.location.href + this.tileset;
-      while(!this.image.complete) {} //This is SO BAD
       
-      //prepare canvas
-      this.canvas.width = image.width;
-      this.canvas.height = image.height;
-      this.drawImageToCanvas();
+      this.image.onload = function() {
+        //prepare canvas
+        this.canvas.width = image.width;
+        this.canvas.height = image.height;
+        this.drawImageToCanvas();
+      }
+      
+      this.image.src = window.location.href + this.tileset;
     },
     registerEvents: function() {
       this.canvas.addEventListener("mousedown",  (function(event) { this.startSetSelection(event); }).bind(this));

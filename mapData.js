@@ -62,8 +62,8 @@ var mapData = {
     }
     
   },
-  setRect: function(x, y, l, h, layer) {
-    for(var i = x; i < x+l; i++) {
+  setRect: function(x, y, w, h) {
+    for(var i = x; i < x+w; i++) {
       for(var j = y; j < y+h; j++) {
         //TODO
       }

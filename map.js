@@ -24,7 +24,9 @@ var mapModule = {
     coords.y = Math.floor(coords.y/32);
     
     //Set data
-    mapData.setRect(this.startCoordinates[0], this.startCoordinates[1], coords.x, coords.y);
+    var w = coords.x - this.startCoordinates[0] + 1;
+    var h = coords.y - this.startCoordinates[1] + 1;
+    mapData.setRect(this.startCoordinates[0], this.startCoordinates[1], w, h);
     
     console.log("finish with " + coords.x + ", " + coords.y + ".");
     

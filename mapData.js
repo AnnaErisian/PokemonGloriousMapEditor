@@ -64,9 +64,18 @@ var mapData = {
   },
   setRect: function(x, y, w, h) {
     console.log(x + " " + y + " " + w + " " + h);
-    for(var i = x; i < x+w; i++) {
-      for(var j = y; j < y+h; j++) {
-        //TODO
+    
+    var tiles = paletteModule.getCurrentSelection();
+    var tileX = 0;
+    var tileY = 0;
+    var layer = layerModule.activeLayer;
+    
+    for(var i = 0; i < w; i++) {
+      for(var j = 0; j < h; j++) {
+        tileData[x+i][y+j].data[layer][0] = tiles.id;
+        var tileX = tiles.x + i % tiles.w;
+        var tileY = tiles.y + j % tiles.h;
+        tileData[x+i][y+j].data[layer][1] = tileY * 8 + tileX;
       }
     }
   },

@@ -71,7 +71,7 @@ function createTilesetModule(idNum, image, iconimage) {
       
       //load image, then continue when done
       this.image = new Image();
-      this.image.callAfterLoading = this.drawImageToCanvas;
+      this.image.callAfterLoading = this.drawImageToCanvas.bind(this);
       this.image.canvas = this.canvas;
       
       this.image.onload = function() {

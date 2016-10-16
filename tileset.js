@@ -13,7 +13,7 @@ function createTilesetModule(idNum, image, iconimage) {
     
     getCurrentSelection: function() { //returns {i,x,y,l,h}
       return {
-        i: id,
+        i: this.id,
         x: this.currentSelection.x,
         y: this.currentSelection.y,
         l: this.currentSelection.l,

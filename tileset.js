@@ -12,6 +12,7 @@ function createTilesetModule(idNum, image, iconimage) {
     startCoordinates: [-1,-1],
     
     getCurrentSelection: function() { //returns {i,x,y,w,h}
+      console.log("id in getCurrentSelection in tilesetModule: " + this.id);
       return {
         i: this.id,
         x: this.currentSelection.x,

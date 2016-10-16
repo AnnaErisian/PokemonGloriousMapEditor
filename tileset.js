@@ -46,6 +46,7 @@ function createTilesetModule(idNum, image, iconimage) {
         h: coords.y - this.startCoordinates[1] + 1,
       };
       this.startCoordinates = [-1, -1];
+      console.log("set these values for currentselection of tileset "+this.id+"\nx: "+this.currentSelection.x+"\ny: "+this.currentSelection.y+"\nw: "+this.currentSelection.w+"\nh: " + this.currentSelection.h);
     },
     
     terminateSetSelection: function(event) {

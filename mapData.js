@@ -72,6 +72,7 @@ var mapData = {
     
     for(var i = 0; i < w; i++) {
       for(var j = 0; j < h; j++) {
+        console.log("input: \nx: " + tiles.x + "\ny: " + tiles.y + "\nw: " + tiles.w + "\nh: " + tiles.h + "\ni: " + i + "\nj: " + j);
         this.tileData[x+i][y+j].data[layer][0] = tiles.id;
         var tileX = tiles.x + i % tiles.w;
         var tileY = tiles.y + j % tiles.h;

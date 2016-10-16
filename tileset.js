@@ -76,8 +76,8 @@ function createTilesetModule(idNum, image, iconimage) {
       
       this.image.onload = function() {
         //prepare canvas
-        this.canvas.width = this.image.width;
-        this.canvas.height = this.image.height;
+        this.canvas.width = this.width;
+        this.canvas.height = this.height;
         callAfterLoading();
       }
       

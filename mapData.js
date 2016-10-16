@@ -72,10 +72,11 @@ var mapData = {
     
     for(var i = 0; i < w; i++) {
       for(var j = 0; j < h; j++) {
-        tileData[x+i][y+j].data[layer][0] = tiles.id;
+        this.tileData[x+i][y+j].data[layer][0] = tiles.id;
         var tileX = tiles.x + i % tiles.w;
         var tileY = tiles.y + j % tiles.h;
-        tileData[x+i][y+j].data[layer][1] = tileY * 8 + tileX;
+        console.log("tilevars: " + tileX + " " + tileY);
+        this.tileData[x+i][y+j].data[layer][1] = tileY * 8 + tileX;
       }
     }
   },

@@ -23,7 +23,8 @@
             right: 0px;
             
             background-color: rgba(0,128,0,0.5);
-            
+        }
+        .tilesetModule {
             overflow: auto;
         }
         
@@ -60,7 +61,7 @@
   </template>
   
   <template id="tilesheetTemplate">
-    <div id="tabs-{{n}}">
+    <div id="tabs-{{n}}" class="tilesetModule">
         <canvas width="100px" height="100px"></canvas>
     </div>
   </template>

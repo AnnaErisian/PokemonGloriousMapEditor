@@ -22,6 +22,8 @@ var layerModule = {
     for(i = 0; i < 5; i++) {
       this.module.append(Mustache.render(this.buttonTemplate.innerHTML, {n: i}));
     }
+    this.activeLayer = 0;
+    this.glowActiveLayer();
   },
   registerEvents: function() {
     var buttons = this.module.find(".layerButton");

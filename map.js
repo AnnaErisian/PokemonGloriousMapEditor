@@ -80,7 +80,7 @@ var mapModule = {
           var x = tile.data[l][1] % 8;
           var y = tile.data[l][1] / 8;
           //ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
-          ctx.drawImage(img, i*32, j*32, 32, 32, x*32, y*32, 32, 32);
+          ctx.drawImage(img, x*32, y*32, 32, 32, i*32, j*32, 32, 32);
         }
       }
     }

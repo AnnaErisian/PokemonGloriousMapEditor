@@ -6,7 +6,7 @@ var paletteModule = {
   icons: [], //stored for creation of tilesetsModules
   tilesetModules: [], //holds the tilesetModules
   updateActiveTileset: function() { //maintain module tracking of active tab
-    this.activeTileset = module.tabs( "option", "active" );
+    this.activeTileset = this.module.tabs( "option", "active" );
   },
   getCurrentSelection: function() { //return: {i,x,y,l,h}
     return this.tilesetModules[activeTileset].getCurrentSelection();

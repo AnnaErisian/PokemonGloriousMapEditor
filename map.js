@@ -32,6 +32,8 @@ var mapModule = {
     
     this.startCoordinates = [-1, -1];
     
+    this.drawCanvas();
+    
   },
   
   terminateSetSelection: function(event) {
@@ -68,6 +70,19 @@ var mapModule = {
     this.drawCanvas();
   },
   drawCanvas: function() {
-    //TODO
+    var ts = mapData.tileData;
+    var ctx = this.canvas.getContext("2d");
+    for(var i = 0; i < ts.length; i++) {
+      for(var j = 0; j < ts[0].length; j++) {
+        var tile = ts[i][j];
+        for(var l = 0; l < 5; l++) {
+          var img = paletteModule.tilesetModules[tile.data[l][0]].image;
+          var x = tile.data[l][1] % 8;
+          var y = tile.data[l][1] / 8;
+          //ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+          ctx.drawImage(img, i*32, j*32, 32, 32, x*32, y*32, 32, 32);
+        }
+      }
+    }
   }
 };

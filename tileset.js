@@ -36,7 +36,7 @@ function createTilesetModule(idNum, image, iconimage) {
         return;
       }
       //otherwise, calculate current selection and reset start coords
-      if(event.button == 1) {//left button
+      if(event.button == 0) {//left button
         var coords = getCursorPosition(this.canvas, event);
         coords.x = Math.floor(coords.x/32);
         coords.y = Math.floor(coords.y/32);

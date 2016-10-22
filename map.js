@@ -35,12 +35,12 @@ var mapModule = {
       h = this.startCoordinates[1] - coords.y + 1;
     }
     
-    mapData.setRect(this.startCoordinates[0], this.startCoordinates[1], w, h);
-    
     console.log("finish with " + coords.x + ", " + coords.y + ".");
 
     console.log("map draw with these coords: \nx: "+this.startCoordinates[0]+"\ny: "+this.startCoordinates[0]+"\nw: "+w+"\nh: " + h);
 
+    mapData.setRect(this.startCoordinates[0], this.startCoordinates[1], w, h);
+    
     this.startCoordinates = [-1, -1];
     
     this.drawCanvas();

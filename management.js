@@ -25,7 +25,7 @@ var managementModule = {
     this.addColumnRightButton = $("#addColRightBtn")[0];
   },
   registerEvents: function() {
-    this.saveButton.onclick = "";
+    this.saveButton.onclick = function() { mapData.save() };
     this.addRowTopButton.onclick = function() { mapData.addRowTop(); mapModule.setUpCanvas(); mapModule.drawCanvas(); };
     this.addRowBottomButton.onclick = function() { mapData.addRowBot(); mapModule.setUpCanvas(); mapModule.drawCanvas();};
     this.addColumnLeftButton.onclick = function() { mapData.addColLeft(); mapModule.setUpCanvas(); mapModule.drawCanvas();};

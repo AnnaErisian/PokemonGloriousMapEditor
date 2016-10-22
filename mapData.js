@@ -89,7 +89,7 @@ var mapData = {
       for(var row = 0; row < numRows; row++) {
         var str = "";
         for(var layer = 0; layer < 5; layer++) {
-          str += this.tileData[col][row].data[layer][0] + ',' + this.tileData[col][row].data[layer][1];
+          str += this.tileData[col][row].data[layer][0] + ',' + this.tileData[col][row].data[layer][1] + '|';
         }
         returnData[col][row] = str + this.tileData[col][row].text;
       }

@@ -1,14 +1,34 @@
 var managementModule = {
   module: null,
+  saveButton: null,
+  addRowTopButton: null,
+  addRowBottomButton: null,
+  addColumnLeftButton: null,
+  addColumnRightButton: null,
   
   createModule() {
     console.log("Management Module Creation");
   },
   render: function() {
-	console.log("Management Module Render");
-    //nothing yet
+	  console.log("Management Module Render");
+    //create html
+    $("#managementModule").append('<button type="button" id="saveBtn">Save</button>' + 
+                                  '<button type="button" id="addRowTopBtn">Add Row (Top)</button>' + 
+                                  '<button type="button" id="addRowBotBtn">Add Row (Bottom)</button>' + 
+                                  '<button type="button" id="addColLeftBtn">Add Column (Left)</button>' + 
+                                  '<button type="button" id="addColRightBtn">Add Column (Right)</button>');
+    this.module = $("#managementModule");
+    this.saveButton = $("#saveBtn")[0];
+    this.addRowTopButton = $("#addRowTopBtn")[0];
+    this.addRowBottomButton = $("#addRowBotBtn")[0];
+    this.addColumnLeftButton = $("#addColLeftBtn")[0];
+    this.addColumnRightButton = $("#addColRightBtn")[0];
   },
   registerEvents: function() {
-    //nothing yet
+    this.saveButton.onclick = 
+    this.addRowTopButton = mapData.addRowTop;
+    this.addRowBottomButton = mapData.addRowBot;
+    this.addColumnLeftButton = mapData.addColLeft;
+    this.addColumnRightButton = mapData.addColRight;
   }
 };

@@ -30,9 +30,11 @@ var mapModule = {
     //reverse if necessary
     if(w < 1) { 
       w = this.startCoordinates[0] - coords.x + 1;
+      this.startCoordinates[0] = coords.x;
     }
     if(h < 1) {
       h = this.startCoordinates[1] - coords.y + 1;
+      this.startCoordinates[1] = coords.y;
     }
     
     console.log("finish with " + coords.x + ", " + coords.y + ".");

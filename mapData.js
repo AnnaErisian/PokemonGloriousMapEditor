@@ -77,6 +77,29 @@ var mapData = {
   },
   getTile: function(x, y, layer) {
     return tileData[x][y].getID(layer);
+  },
+  save: function() {
+    var numCols = this.tileData.length;
+    var numRows = this.tileData[0].length;
+    
+    var returnData = new Array(numCols);
+    for(var i = 0; i < numCols; i++) returnData[i] = new Array(numRows);
+    
+    for(var col = 0; col < numCols; col++) {
+      for(var row = 0; row < numRows; row++) {
+        var str = "";
+        for(var layer = 0; layer < 5; layer++) {
+          str += this.tileData[col][row].data[layer][0] + ',' + this.tileData[col][row].data[layer][1];
+        }
+        returnData[col][row] = str + this.tileData[col][row].text;
+      }
+    }
+    gapi.client.sheets.spreadsheets.values.update({
+      spreadsheetId: getParameterByName('ssid'),
+      range: 'Sheet1!C:ZZ',
+      majorDimension: 'COLUMNS',
+      values: returnData
+    });
   }
 };
 

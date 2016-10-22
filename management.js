@@ -26,9 +26,9 @@ var managementModule = {
   },
   registerEvents: function() {
     this.saveButton.onclick = "";
-    this.addRowTopButton.onclick = function() { mapData.addRowTop(); map.setUpCanvas(); };
-    this.addRowBottomButton.onclick = function() { mapData.addRowBot(); map.setUpCanvas(); };
-    this.addColumnLeftButton.onclick = function() { mapData.addColLeft(); map.setUpCanvas(); };
-    this.addColumnRightButton.onclick = function() { mapData.addColRight(); map.setUpCanvas(); };
+    this.addRowTopButton.onclick = function() { mapData.addRowTop(); mapModule.setUpCanvas(); };
+    this.addRowBottomButton.onclick = function() { mapData.addRowBot(); mapModule.setUpCanvas(); };
+    this.addColumnLeftButton.onclick = function() { mapData.addColLeft(); mapModule.setUpCanvas(); };
+    this.addColumnRightButton.onclick = function() { mapData.addColRight(); mapModule.setUpCanvas(); };
   }
 };

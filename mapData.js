@@ -99,6 +99,11 @@ var mapData = {
       range: 'Sheet1!C:ZZ',
       majorDimension: 'COLUMNS',
       values: returnData
+    }).then(function(response) {
+      console.log('response get');
+      console.log(response);
+    }, function(response) {
+      console.log('Error: ' + response.result.error.message);
     });
   }
 };

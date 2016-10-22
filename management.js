@@ -26,9 +26,9 @@ var managementModule = {
   },
   registerEvents: function() {
     this.saveButton.onclick = 
-    this.addRowTopButton = mapData.addRowTop;
-    this.addRowBottomButton = mapData.addRowBot;
-    this.addColumnLeftButton = mapData.addColLeft;
-    this.addColumnRightButton = mapData.addColRight;
+    this.addRowTopButton = function() { mapData.addRowTop(); map.setUpCanvas(); };
+    this.addRowBottomButton = function() { mapData.addRowBot(); map.setUpCanvas(); };
+    this.addColumnLeftButton = function() { mapData.addColLeft(); map.setUpCanvas(); };
+    this.addColumnRightButton = function() { mapData.addColRight(); map.setUpCanvas(); };
   }
 };

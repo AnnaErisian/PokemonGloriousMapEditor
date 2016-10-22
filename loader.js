@@ -96,12 +96,12 @@ function prepareApplication() {
     mapModule.render();
     paletteModule.render();
     layerModule.render();
-//    managementModule.render();
+    managementModule.render();
 
     mapModule.registerEvents();
     paletteModule.registerEvents();
     layerModule.registerEvents();
-//    managementModule.registerEvents();
+    managementModule.registerEvents();
     
   }, function(response) {
     console.log('Error: ' + response.result.error.message);

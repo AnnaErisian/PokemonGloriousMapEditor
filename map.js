@@ -72,7 +72,7 @@ var mapModule = {
   drawCanvas: function() {
     var ts = mapData.tileData;
     var ctx = this.canvas.getContext("2d");
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     for(var i = 0; i < ts.length; i++) {
       for(var j = 0; j < ts[0].length; j++) {
         var tile = ts[i][j];

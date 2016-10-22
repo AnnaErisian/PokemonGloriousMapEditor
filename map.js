@@ -28,8 +28,12 @@ var mapModule = {
     var h = coords.y - this.startCoordinates[1] + 1;
     
     //reverse if necessary
-    if(w < 1) { this.startCoordinates[0] = coords.x; h++; }
-    if(h < 1) { this.startCoordinates[1] = coords.y; w++; }
+    if(w < 1) { 
+      w = this.startCoordinates[0] - coords.x + 1;
+    }
+    if(h < 1) {
+      h = this.startCoordinates[1] - coords.y + 1;
+    }
     
     mapData.setRect(this.startCoordinates[0], this.startCoordinates[1], w, h);
     

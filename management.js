@@ -25,10 +25,10 @@ var managementModule = {
     this.addColumnRightButton = $("#addColRightBtn")[0];
   },
   registerEvents: function() {
-    this.saveButton.onclick = 
-    this.addRowTopButton = function() { mapData.addRowTop(); map.setUpCanvas(); };
-    this.addRowBottomButton = function() { mapData.addRowBot(); map.setUpCanvas(); };
-    this.addColumnLeftButton = function() { mapData.addColLeft(); map.setUpCanvas(); };
-    this.addColumnRightButton = function() { mapData.addColRight(); map.setUpCanvas(); };
+    this.saveButton.onclick = "";
+    this.addRowTopButton.onclick = function() { mapData.addRowTop(); map.setUpCanvas(); };
+    this.addRowBottomButton.onclick = function() { mapData.addRowBot(); map.setUpCanvas(); };
+    this.addColumnLeftButton.onclick = function() { mapData.addColLeft(); map.setUpCanvas(); };
+    this.addColumnRightButton.onclick = function() { mapData.addColRight(); map.setUpCanvas(); };
   }
 };

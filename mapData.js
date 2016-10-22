@@ -97,7 +97,7 @@ var mapData = {
     gapi.client.sheets.spreadsheets.values.update({
       spreadsheetId: getParameterByName('ssid'),
       range: 'Sheet1!C:ZZ',
-      valueInputOption: RAW, //Yeah I know this is insecure ITS JAVASCRIPT I DONT HAVE ANY FUCKS TO GIVE
+      valueInputOption: "RAW", //Yeah I know this is insecure ITS JAVASCRIPT I DONT HAVE ANY FUCKS TO GIVE
       majorDimension: 'COLUMNS',
       values: returnData
     }).then(function(response) {

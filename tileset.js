@@ -49,7 +49,7 @@ function createTilesetModule(idNum, image, iconimage) {
       } else { //right button or any other I guess
         this.currentSelection = {
             x: -1,
-            y: -1,
+            y: 0,
             w: 1,
             h: 1,
           };

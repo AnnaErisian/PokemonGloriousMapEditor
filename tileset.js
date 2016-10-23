@@ -108,8 +108,8 @@ function createTilesetModule(idNum, image, iconimage) {
       ctx.fillStyle = "black";
       ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
       
-      for(var i = 0; i < tilesDown; i++) {
-        for(var j = 0; j < tilesAcross; j++) {
+      for(var i = 0; i < tilesAcross; i++) {
+        for(var j = 0; j < tilesDown; j++) {
           //ctx.drawImage(image,    sx,   sy,   sWidth, sHeight, dx,   dy,   dWidth, dHeight);
           ctx.drawImage(this.image, i*32, j*32, 32,     32,      i*33, j*33, 32,     32);
         }

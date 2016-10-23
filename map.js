@@ -6,8 +6,8 @@ var mapModule = {
   startSetSelection: function(event) {
     //set startCoords to current coords (32px squares, we want 1-8th square number)
     var coords = getCursorPosition(this.canvas, event);
-    this.startCoordinates[0] = Math.floor(coords.x/32);
-    this.startCoordinates[1] = Math.floor(coords.y/32);
+    this.startCoordinates[0] = Math.floor(coords.x/33);
+    this.startCoordinates[1] = Math.floor(coords.y/33);
     
     console.log("start with " + this.startCoordinates[0] + ", " + this.startCoordinates[1] + ".");
   },
@@ -20,8 +20,8 @@ var mapModule = {
     }
     //otherwise, calculate current selection and reset start coords
     var coords = getCursorPosition(this.canvas, event);
-    coords.x = Math.floor(coords.x/32);
-    coords.y = Math.floor(coords.y/32);
+    coords.x = Math.floor(coords.x/33);
+    coords.y = Math.floor(coords.y/33);
     
     //Set data
     var w = coords.x - this.startCoordinates[0] + 1;
@@ -72,8 +72,8 @@ var mapModule = {
     this.canvas.addEventListener("mouseleave", (function(event) { this.terminateSetSelection(event); }).bind(this));
   },
   setUpCanvas: function() {
-    this.canvas.width = mapData.tileData.length * 32;
-    this.canvas.height = mapData.tileData[0].length * 32;
+    this.canvas.width = mapData.tileData.length * 33;
+    this.canvas.height = mapData.tileData[0].length * 33;
   },
   drawCanvasIfReady: function() {
     for(var i = 0; i < paletteModule.tilesetModules.length; i++) {
@@ -85,7 +85,8 @@ var mapModule = {
   drawCanvas: function() {
     var ts = mapData.tileData;
     var ctx = this.canvas.getContext("2d");
-    ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
     for(var i = 0; i < ts.length; i++) {
       for(var j = 0; j < ts[0].length; j++) {
         var tile = ts[i][j];
@@ -94,8 +95,8 @@ var mapModule = {
             var img = paletteModule.tilesetModules[tile.data[l][0]].image;
             var x = tile.data[l][1] % 8;
             var y = Math.floor(tile.data[l][1] / 8);
-            //ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
-            ctx.drawImage(img, x*32, y*32, 32, 32, i*32, j*32, 32, 32);
+            //ctx.drawImage(image, sx,   sy,   sWidth, sHeight, dx,   dy,   dWidth, dHeight);
+            ctx.drawImage(img,     x*32, y*32, 32,     32,      i*33, j*33, 32,     32);
           }
         }
       }

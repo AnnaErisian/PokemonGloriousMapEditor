@@ -101,11 +101,20 @@ function createTilesetModule(idNum, image, iconimage) {
     },
     drawImageToCanvas: function() {
       var ctx = this.canvas.getContext("2d");
-      console.log("this.image in drawImageToCanvas:")
-      console.log(this.image);
-      console.log("this in drawImageToCanvas:")
-      console.log(this);
-      ctx.drawImage(this.image, 0, 0);
+      
+      var tilesDown   = Math.floor(this.image.height / 32)
+      var tilesAcross = Math.floor(this.image.width / 32)
+      
+      ctx.fillStyle = "black";
+      ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+      
+      for(var i = 0; i < tilesDown; i++) {
+        for(var j = 0; j < tilesAcross; j++) {
+          //ctx.drawImage(image,    sx,   sy,   sWidth, sHeight, dx,   dy,   dWidth, dHeight);
+          ctx.drawImage(this.image, i*32, j*32, 32,     32,      i*33, j*33, 32,     32);
+          }
+        }
+      }
       this.ready = true;
       mapModule.drawCanvasIfReady();
     }

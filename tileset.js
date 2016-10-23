@@ -112,7 +112,6 @@ function createTilesetModule(idNum, image, iconimage) {
         for(var j = 0; j < tilesAcross; j++) {
           //ctx.drawImage(image,    sx,   sy,   sWidth, sHeight, dx,   dy,   dWidth, dHeight);
           ctx.drawImage(this.image, i*32, j*32, 32,     32,      i*33, j*33, 32,     32);
-          }
         }
       }
       this.ready = true;

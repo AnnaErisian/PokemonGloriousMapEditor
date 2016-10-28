@@ -128,10 +128,10 @@ function getParameterByName(name, url) {
  */
 function makeTilesheets(data) {
   data.push([1,2,3,4]);
-  data[0][0] = "img/caves.png";
-  data[0][1] = "img/gyms.png";
-  data[0][2] = "img/inside.png";
-  data[0][3] = "img/outside.png";
+  data[0][0] = "img/default/caves.png";
+  data[0][1] = "img/default/gyms.png";
+  data[0][2] = "img/default/inside.png";
+  data[0][3] = "img/default/outside.png";
 }
 
 /**
@@ -140,10 +140,10 @@ function makeTilesheets(data) {
  */
 function makeIcons(data) {
   data.push([1,2,3,4]);
-  data[1][0] = "img/cavesIcon.png";
-  data[1][1] = "img/gymsIcon.png";
-  data[1][2] = "img/insideIcon.png";
-  data[1][3] = "img/outsideIcon.png";
+  data[1][0] = "img/default/cavesIcon.png";
+  data[1][1] = "img/default/gymsIcon.png";
+  data[1][2] = "img/default/insideIcon.png";
+  data[1][3] = "img/default/outsideIcon.png";
 }
 
 /**

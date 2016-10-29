@@ -98,6 +98,9 @@ function createTilesetModule(idNum, image, iconimage) {
       this.canvas.addEventListener("mousedown",  (function(event) { this.startSetSelection(event); }).bind(this));
       this.canvas.addEventListener("mouseup",    (function(event) { this.finishSetSelection(event); }).bind(this));
       this.canvas.addEventListener("mouseleave", (function(event) { this.terminateSetSelection(event); }).bind(this));
+      this.canvas.oncontextmenu = function(event) {
+        return false;
+      });
     },
     drawImageToCanvas: function() {
       var ctx = this.canvas.getContext("2d");
